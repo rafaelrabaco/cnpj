@@ -1,0 +1,13 @@
+# App files and folders
+/.env
+/.env.default
+/.eslint.json
+/.nyc_output
+/.travis.yml
+/cc_test_reporter
+/config
+/coverage
+/node_modules
+/src
+/storage
+/test
