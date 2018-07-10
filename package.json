@@ -20,6 +20,9 @@
         "type": "git",
         "url": "https://github.com/rafaelrabaco/cnpj"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "dependencies": {
         "axios": "^0.18.0"
     },
