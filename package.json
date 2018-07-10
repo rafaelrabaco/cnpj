@@ -1,0 +1,62 @@
+{
+    "name": "@rafaelrabaco/cnpj",
+    "description": "Validate, generate, format and consult CNPJ numbers",
+    "keywords": [
+        "cnpj",
+        "document",
+        "documento",
+        "receita",
+        "receitaws"
+    ],
+    "author": "Rafael Rabaço <rafaelrabaco@gmail.com>",
+    "version": "0.0.0-development",
+    "main": "lib/index.js",
+    "types": "index.d.ts",
+    "license": "MIT",
+    "engines": {
+        "node": ">=7.10"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rafaelrabaco/cnpj"
+    },
+    "dependencies": {
+        "axios": "^0.18.0"
+    },
+    "devDependencies": {
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-register": "^6.26.0",
+        "chai": "^4.1.2",
+        "eslint": "^5.0.1",
+        "husky": "^0.14.3",
+        "lint-staged": "^7.1.3",
+        "mocha": "^4.1.0",
+        "nyc": "^11.9.0",
+        "semantic-release": "^15.6.3",
+        "travis-deploy-once": "^5.0.1"
+    },
+    "nyc": {
+        "exclude": [
+            "config",
+            "lib",
+            "test"
+        ],
+        "require": [
+            "babel-register",
+            "babel-polyfill"
+        ],
+        "reporter": [
+            "lcov",
+            "text"
+        ]
+    },
+    "scripts": {
+        "precommit": "./node_modules/.bin/lint-staged",
+        "lint": "./node_modules/.bin/eslint src/ test/ --fix",
+        "build": "babel src -d ./",
+        "test": "NODE_ENV=dev ./node_modules/.bin/nyc ./node_modules/mocha/bin/_mocha",
+        "travis-deploy-once": "travis-deploy-once",
+        "semantic-release": "semantic-release"
+    }
+}
